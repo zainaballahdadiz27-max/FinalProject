@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77fe785c-a276-49a9-a999-f23a9433d855" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assessment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Course.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gradebook.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Student.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gradebook.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gradebook.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Assessment.executor": "Run",
+    "Python.Course.executor": "Run",
+    "Python.Gradebook.executor": "Run",
     "Python.Student.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
