@@ -6,16 +6,19 @@ class Assessment:
         self.title = title  # The title of the assessment.
         self.max_score = max_score
 
-    @staticmethod
-    def calculate_percentage(score):
-        percentage =  (score / 10) * 100
+    # Converts the student's score into a percentage.
+    def calculate_percentage(self, score):
+        percentage =  (score / self.max_score) * 100
         return percentage
+
+    # Return feedback for the score
     @staticmethod
     def grade_message(score):
         message = f"Your score is {score}, well done! Keep practicing to improve."
         return message
-    @staticmethod
-    def display_info(self=None):
+    # Display the title and the max score
+
+    def display_info(self):
         return f"{self.title} - Max Score: {self.max_score}"
 
 # Child/Subclass
@@ -23,6 +26,7 @@ class Quiz(Assessment):
     def display_info(self=None):
         return f"Quiz: {self.title} - Max Score: {self.max_score}"
 
+    # Returns feedback based on the quiz score.
     def grade_message(self, score):
         if score == 10:
             return "Perfect score! Outstanding work!"
@@ -50,9 +54,11 @@ class Quiz(Assessment):
             return "Invalid score. Please enter a score between 0 and 10."
 
 class Exam(Assessment):
+    # Displays the exam name and its maximum score.
     def display_info(self=None):
         return f"Exam: {self.title} - Max Score: {self.max_score}"
 
+    # Returns pass or fail feedback based on the exam score.
     def grade_message(self, score):
         percentage = (score / self.max_score) * 100
 
@@ -62,9 +68,11 @@ class Exam(Assessment):
             return "Failed exam."
 
 class Project(Assessment):
+    # Displays the project name and its maximum score.
     def display_info(self=None):
         return f"Project: {self.title} - Max Score: {self.max_score}"
 
+    # Returns feedback based on the project score.
     def grade_message(self, score):
         percentage = (score / self.max_score) * 100
 

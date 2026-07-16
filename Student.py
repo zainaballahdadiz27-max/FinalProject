@@ -38,7 +38,7 @@ class Student:
 
 
 # Example Usage
-student1 = Student("S001", "Ahmad Rahimi", "ahmad@example.com")
+student1 = Student("S001", "Ahmad Noori", "ahmad@example.com")
 
 print(student1.get_id())
 print(student1.get_name())
