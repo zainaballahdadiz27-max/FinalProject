@@ -8,8 +8,7 @@ class Course:
         self.students = {}
         self.assessments = []
 
-    # Enrolls a student by adding their student ID
-    # to the students list.
+    # Enrolls a student by adding their student ID to the students list.
     def add_student(self, student):
         self.students[student.student_id] = student
 
