@@ -52,8 +52,3 @@ class Course:
 # course.add_assessment(project)
 #
 # course.display_info()
-
-
-
-
-

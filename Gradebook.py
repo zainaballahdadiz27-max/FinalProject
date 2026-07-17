@@ -17,6 +17,7 @@ class Gradebook:
     def add_course(self, course):
         self.courses[course.course_code] = course
 
+
     # Enrolls a student in a course if both exist.
     def enroll_student(self, student_id, course_code):
 
@@ -83,6 +84,9 @@ class Gradebook:
         if not scores:
             return 0
         return sum(scores) / len(scores)
+
+    def show_report(self, param, param1):
+        pass
 
 
 
