@@ -87,12 +87,12 @@ class Project(Assessment):
 
 
 
-exam = Exam("Midterm", 100)
-print(exam.grade_message(80))
-
-project = Project("Midterm", 100)
-print(project.display_info())
-print(project.grade_message(80))
-
-assessment = Assessment("Assessment", 0)
-print(assessment.calculate_percentage(8))
+# exam = Exam("Midterm", 100)
+# print(exam.grade_message(80))
+#
+# project = Project("Midterm", 100)
+# print(project.display_info())
+# print(project.grade_message(80))
+#
+# assessment = Assessment("Assessment", 0)
+# print(assessment.calculate_percentage(8))

@@ -38,20 +38,20 @@ class Course:
         for assessment in self.assessments:
             print(f"- {assessment.title} / Max Score: {assessment.max_score}")
 
-course = Course("PY101", "Python Programming")
-
-course.add_student("S001")
-course.add_student("S002")
-
-quiz = Quiz("Quiz 1", 10)
-exam = Exam("Midterm Exam", 100)
-project = Project("Final Project", 100)
-
-course.add_assessment(quiz)
-course.add_assessment(exam)
-course.add_assessment(project)
-
-course.display_info()
+# course = Course("PY101", "Python Programming")
+#
+# course.add_student("S001")
+# course.add_student("S002")
+#
+# quiz = Quiz("Quiz 1", 10)
+# exam = Exam("Midterm Exam", 100)
+# project = Project("Final Project", 100)
+#
+# course.add_assessment(quiz)
+# course.add_assessment(exam)
+# course.add_assessment(project)
+#
+# course.display_info()
 
 
 

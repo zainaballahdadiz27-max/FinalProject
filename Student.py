@@ -38,14 +38,14 @@ class Student:
 
 
 # Example Usage
-student1 = Student("S001", "Ahmad Noori", "ahmad@example.com")
-
-print(student1.get_id())
-print(student1.get_name())
-
-student1.set_email("rahimi@gmail.com")
-
-student1.enroll_course("PY101")
-student1.enroll_course("MATH101")
-
-student1.display_info()
+# student1 = Student("S001", "Ahmad Noori", "ahmad@example.com")
+#
+# print(student1.get_id())
+# print(student1.get_name())
+#
+# student1.set_email("rahimi@gmail.com")
+#
+# student1.enroll_course("PY101")
+# student1.enroll_course("MATH101")
+#
+# student1.display_info()
