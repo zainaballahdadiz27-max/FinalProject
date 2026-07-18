@@ -136,6 +136,7 @@ class Gradebook:
 
             average = total_percentage / count
 
+            # Creative feature letter grade.
             # Letter Grade
             if average >= 90:
                 letter = "A"
