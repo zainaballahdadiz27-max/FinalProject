@@ -1,8 +1,6 @@
-from Student import Student
+# Creates a new Gradebook object.
+# Initializes dictionaries for students, courses, and grades, and sets the passing grade.
 class Gradebook:
-    # Creates a new Gradebook object.
-    # Initializes dictionaries for students, courses, and grades,
-    # and sets the passing grade.
     def __init__(self):
         self.students = {}        # Key: student_id, Value: Student object
         self.courses = {}         # Key: course_code, Value: Course object
@@ -85,22 +83,4 @@ class Gradebook:
             return 0
         return sum(scores) / len(scores)
 
-    def show_report(self, param, param1):
-        pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def show_report(self, student_id):
