@@ -161,7 +161,7 @@
 from Student import Student
 from Course import Course
 from Assessment import Quiz, Exam, Project
-from gradebook import gradebook
+from gradebook import Gradebook
 
 # Create gradebook object
 # gradebook = gradebook()
@@ -310,7 +310,7 @@ exam2 = Exam("Final Exam", 100)
 project1 = Project("Final Project", 100)
 
 # Create gradebook Object
-gradebook = gradebook()
+gradebook = Gradebook()
 
 # Add the objects to the gradebook
 # Add students
@@ -349,4 +349,4 @@ average = gradebook.calculate_average("S001", "PY101")
 print("Average:", average)
 
 # Show Report
-print(gradebook.show_report("S001", "PY101"))
+gradebook.show_report("S001")

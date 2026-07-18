@@ -48,23 +48,27 @@ class Gradebook:
     # Records a student's score for an assessment.
     def record_grade(self, student_id, course_code, assessment_title, score):
 
-        if student_id not in self.grades:
+        if student_id not in self.students:
             print("Student not found.")
             return
 
-        if course_code not in self.grades[student_id]:
-            print("Student not enrolled.")
+        if course_code not in self.courses:
+            print("Course not found.")
             return
 
-        course = self.courses[course_code]
-
-        assessment = course.find_assessment(assessment_title)
+        assessment = self.courses[course_code].find_assessment(assessment_title)
 
         if assessment is None:
             print("Assessment not found.")
             return
 
-        self.grades[student_id][course_code][assessment_title] = score
+        if student_id not in self.grades:
+            self.grades[student_id] = {}
+
+        if course_code not in self.grades[student_id]:
+            self.grades[student_id][course_code] = {}
+
+        self.grades[student_id][course_code][assessment_title] = (assessment, score)
 
         print("Grade recorded successfully.")
 
@@ -83,4 +87,75 @@ class Gradebook:
             return 0
         return sum(scores) / len(scores)
 
+    # Shows a complete report for one student.
+    # The report includes student information, enrolled courses, grades, average score, letter grade, and pass/fail result.
     def show_report(self, student_id):
+
+        if student_id not in self.students:
+            print("Student not found.")
+            return
+
+        student = self.students[student_id]
+
+        print("\n========== STUDENT REPORT ==========")
+        print(f"Student ID : {student.student_id}")
+        print(f"Name       : {student.name}")
+        print(f"Email      : {student.email}")
+
+        if student_id not in self.grades:
+            print("\nNo grades found.")
+            return
+
+        # Loop through every course
+        for course_code, assessments in self.grades[student_id].items():
+
+            course = self.courses[course_code]
+
+            print(f"\nCourse : {course.course_name}")
+            print("-" * 45)
+
+            total_percentage = 0
+            count = 0
+
+            # Loop through every assessment
+            for title, data in assessments.items():
+                assessment = data[0]
+                score = data[1]
+
+                percentage = assessment.calculate_percentage(score)
+
+                print(f"{title}")
+                print(f"Score      : {score}/{assessment.max_score}")
+                print(f"Percentage : {percentage:.2f}%")
+
+                print(f"Feedback   : {assessment.grade_message(score)}")
+                print()
+
+                total_percentage += percentage
+                count += 1
+
+            average = total_percentage / count
+
+            # Letter Grade
+            if average >= 90:
+                letter = "A"
+            elif average >= 80:
+                letter = "B"
+            elif average >= 70:
+                letter = "C"
+            elif average >= 60:
+                letter = "D"
+            else:
+                letter = "F"
+
+            # Pass/Fail
+            if average >= self.passing_grade:
+                result = "Passed"
+            else:
+                result = "Failed"
+
+            print(f"Average      : {average:.2f}%")
+            print(f"Letter Grade : {letter}")
+            print(f"Result       : {result}")
+
+        print("=" * 45)
