@@ -21,10 +21,13 @@ class Student:
         else:
             print("Invalid email address.")
 
-    # Adds a course to the student's course list
+    # Adds a course to the student's course list.
     def enroll_course(self, course_code):
-        self.courses.append(course_code)
-        print(f"{course_code} has been added.")
+
+        if course_code not in self.courses:
+            self.courses.append(course_code)
+            print(f"{course_code} has been added.")
+    # This ensures a student cannot be enrolled in the same course multiple times.
 
     # Displays the student's information
     def display_info(self):
