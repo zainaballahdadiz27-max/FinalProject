@@ -236,3 +236,16 @@ class Gradebook:
         print(f"Total Courses     : {total_courses}")
         print(f"Total Assessments : {total_assessments}")
         print("=========================================")
+
+    # Creative feature Teacher comments
+    # Adds a teacher's comment to a student's report.
+    def teacher_comments(self, student_id, comment):
+
+        if student_id not in self.students:
+            print("Student not found.")
+            return
+
+        student = self.students[student_id]
+        student.comment = comment
+
+        print("Teacher comment added successfully.")
