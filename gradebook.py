@@ -211,5 +211,13 @@ class Gradebook:
 
         print(f"Student {student_id} removed successfully.")
 
+    # Returns whether a student passed or failed based on the passing grade.
+    def get_result(self, average):
+
+        if average >= self.passing_grade:
+            return "Passed"
+        else:
+            return "Failed"
+
 
 
