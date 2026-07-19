@@ -13,7 +13,10 @@ while True:
     print("5. Record Grade")
     print("6. Calculate Average")
     print("7. Show Report")
-    print("8. Exit")
+    print("8. Delete Student")
+    print("9. Teacher Comment")
+    print("10. Dashboard")
+    print("11. Exit")
 
     choice = input("Enter your choice: ")
 
@@ -112,14 +115,35 @@ while True:
     # ----------------------------
     elif choice == "7":
         student_id = input("Student ID: ")
-        course_code = input("Course Code: ")
-
         gradebook.show_report(student_id)
+
+    # ----------------------------
+    # Step 8 - Delete Student
+    # ----------------------------
+    elif choice == "8":
+        student_id = input("Student ID: ")
+        gradebook.delete_student(student_id)
+
+    # ----------------------------
+    # Step 9 - Teacher Comment
+    # ----------------------------
+    elif choice == "9":
+        student_id = input("Student ID: ")
+
+        comment = input("Enter teacher comment: ")
+
+        gradebook.teacher_comments(student_id, comment)
+
+    # ----------------------------
+    # Step 10 - Teacher Comment
+    # ----------------------------
+    elif choice == "10":
+        gradebook.dashboard()
 
     # ----------------------------
     # Exit
     # ----------------------------
-    elif choice == "8":
+    elif choice == "11":
         print("Thank you for using the Student Grade Management System.")
         break
 
