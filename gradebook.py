@@ -220,4 +220,19 @@ class Gradebook:
             return "Failed"
 
 
+    # Creative feature Dashboard
+    # Shows a summary of the gradebook.
+    def dashboard(self):
 
+        total_students = len(self.students)
+        total_courses = len(self.courses)
+
+        total_assessments = 0
+        for course in self.courses.values():
+            total_assessments += len(course.assessments)
+
+        print("\n========== GRADEBOOK DASHBOARD ==========")
+        print(f"Total Students    : {total_students}")
+        print(f"Total Courses     : {total_courses}")
+        print(f"Total Assessments : {total_assessments}")
+        print("=========================================")
