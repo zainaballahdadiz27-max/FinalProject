@@ -184,7 +184,32 @@ class Gradebook:
 
         return None
 
+    # Removes a student from the gradebook and all enrolled courses.
+    def delete_student(self, student_id):
 
-gradebook = Gradebook()            # PROBLEMMMMM! With calculate_average
-c = gradebook.calculate_average("S001", "PY001")
-print(c)
+        if student_id not in self.students:
+            print("Student not found.")
+            return
+
+        student = self.students[student_id]
+
+        # Remove the student from every enrolled course
+        for course_code in student.courses:
+
+            if course_code in self.courses:
+                course = self.courses[course_code]
+
+                if student in course.students:
+                    course.students.remove(student)
+
+        # Remove the student's grades
+        if student_id in self.grades:
+            del self.grades[student_id]
+
+        # Remove the student
+        del self.students[student_id]
+
+        print(f"Student {student_id} removed successfully.")
+
+
+
