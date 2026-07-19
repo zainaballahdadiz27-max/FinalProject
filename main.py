@@ -163,8 +163,7 @@ from Course import Course
 from Assessment import Quiz, Exam, Project
 from gradebook import Gradebook
 
-# Create gradebook object
-# gradebook = gradebook()
+
 #
 # while True:
 #     print("\n========== STUDENT GRADE MANAGEMENT SYSTEM ==========")
@@ -346,7 +345,18 @@ gradebook.record_grade("S002", "PY101", "Final Project", 80)
 
 # Calculate Average
 average = gradebook.calculate_average("S001", "PY101")
-print("Average:", average)
+print(f"Average: {average:.2f}")
 
 # Show Report
 gradebook.show_report("S001")
+
+# Search student
+# Example Usage
+student = gradebook.search_student("S001")
+
+if student:
+    student.display_info()
+else:
+    print("Student not found.")
+
+gradebook.search_student("S001")

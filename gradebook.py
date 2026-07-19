@@ -1,5 +1,6 @@
 # Creates a new Gradebook object.
 # Initializes dictionaries for students, courses, and grades, and sets the passing grade.
+
 class Gradebook:
     def __init__(self):
         self.students = {}        # Key: student_id, Value: Student object
@@ -81,11 +82,15 @@ class Gradebook:
         if course_code not in self.grades[student_id]:
             return None
 
-        scores = list(self.grades[student_id][course_code].values())
+        grades = self.grades[student_id][course_code].values()
+
+        scores = [score for assessment, score in grades]
 
         if not scores:
             return 0
+
         return sum(scores) / len(scores)
+
 
     # Shows a complete report for one student.
     # The report includes student information, enrolled courses, grades, average score, letter grade, and pass/fail result.
@@ -133,6 +138,9 @@ class Gradebook:
 
                 total_percentage += percentage
                 count += 1
+            if count == 0:
+                print("No grades recorded for this course.")
+                continue
 
             average = total_percentage / count
 
@@ -160,3 +168,23 @@ class Gradebook:
             print(f"Result       : {result}")
 
         print("=" * 45)
+
+    # Searches for a student by ID or name.
+    # Returns the Student object if found, otherwise returns None.
+    def search_student(self, keyword):
+
+        keyword = keyword.lower()  # Ignore uppercase/lowercase
+
+        for student in self.students.values():
+
+            # Search by student ID or name
+            if (student.student_id.lower() == keyword or
+                    student.name.lower() == keyword):
+                return student
+
+        return None
+
+
+gradebook = Gradebook()            # PROBLEMMMMM! With calculate_average
+c = gradebook.calculate_average("S001", "PY001")
+print(c)
