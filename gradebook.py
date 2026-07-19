@@ -166,6 +166,7 @@ class Gradebook:
             print(f"Average      : {average:.2f}%")
             print(f"Letter Grade : {letter}")
             print(f"Result       : {result}")
+            print(f"Teacher Comment : {student.comment}")
 
         print("=" * 45)
 

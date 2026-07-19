@@ -347,6 +347,11 @@ gradebook.record_grade("S002", "PY101", "Final Project", 80)
 average = gradebook.calculate_average("S001", "PY101")
 print(f"Average: {average:.2f}")
 
+# Teacher comment
+gradebook.teacher_comments(
+    "S001",
+    "Excellent work! Keep improving your programming skills."
+)
 # Show Report
 gradebook.show_report("S001")
 
