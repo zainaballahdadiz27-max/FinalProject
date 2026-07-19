@@ -4,6 +4,7 @@ class Student:
         self.name = name
         self.email = email
         self.courses = []
+        self.comment = "No comments."
 
     # Returns the student's ID
     def get_id(self):
