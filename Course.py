@@ -1,5 +1,3 @@
-
-from Assessment import Quiz, Exam, Project
 class Course:
     # Creates a Course object with its code, name, list of enrolled students, and assessments.
     def __init__(self, course_code, course_name):
@@ -12,8 +10,7 @@ class Course:
     def add_student(self, student):
         self.students[student.student_id] = student
 
-    # Adds a Quiz, Exam, or Project object
-    # to the assessments list.
+    # Adds a Quiz, Exam, or Project object to the assessments list.
     def add_assessment(self, assessment):
         self.assessments.append(assessment)
 

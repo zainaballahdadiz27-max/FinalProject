@@ -135,7 +135,7 @@ while True:
         gradebook.teacher_comments(student_id, comment)
 
     # ----------------------------
-    # Step 10 - Teacher Comment
+    # Step 10 - Dashboard
     # ----------------------------
     elif choice == "10":
         gradebook.dashboard()
