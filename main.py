@@ -144,6 +144,7 @@ while True:
     # Exit
     # ----------------------------
     elif choice == "11":
+
         print("Thank you for using the Student Grade Management System.")
         break
 
@@ -154,101 +155,101 @@ while True:
 # ****************************
 # Create gradebook Object
 # ****************************
-gradebook = Gradebook()
-
-# ****************************
-# Create Student Objects
-# ****************************
-student1 = Student("S001", "Ahmad Rahmi", "ahmad@gmail.com")
-student2 = Student("S002", "Sara Noori", "sara@gmail.com")
-
-# **************************
-# Create Course Objects
-# **************************
-course1 = Course("PY101", "Python Programming")
-course2 = Course("DB101", "Database Systems")
-
-# *******************************
-# Create Assessment Objects
-# *******************************
-quiz1 = Quiz("Quiz 1", 10)
-quiz2 = Quiz("Quiz 2", 10)
-
-exam1 = Exam("Midterm Exam", 100)
-exam2 = Exam("Final Exam", 100)
-
-project1 = Project("Final Project", 100)
-
-# *******************************
-# Add students to Gradebook
-# *******************************
-gradebook.add_student(student1)
-gradebook.add_student(student2)
-
-# *******************************
-# Add courses to Gradebook
-# *******************************
-gradebook.add_course(course1)
-gradebook.add_course(course2)
-
-# *******************************
-# Add assessments to courses
-# *******************************
-gradebook.add_assessment("PY101", quiz1)
-gradebook.add_assessment("PY101", exam1)
-gradebook.add_assessment("PY101", project1)
-
-gradebook.add_assessment("DB101", quiz2)
-gradebook.add_assessment("DB101", exam2)
-
-# ****************************
-# Enroll Students
-# ****************************
-gradebook.enroll_student("S001", "PY101")
-gradebook.enroll_student("S001", "DB101")
-gradebook.enroll_student("S002", "PY101")
-
-# **************************
-# Record Grades
-# **************************
-gradebook.record_grade("S001", "PY101", "Quiz 1", 8)
-gradebook.record_grade("S001", "PY101", "Midterm Exam", 75)
-gradebook.record_grade("S001", "PY101", "Final Project", 90)
-
-gradebook.record_grade("S001", "DB101", "Quiz 2", 9)
-gradebook.record_grade("S001", "DB101", "Final Exam", 88)
-
-gradebook.record_grade("S002", "PY101", "Quiz 1", 7)
-gradebook.record_grade("S002", "PY101", "Midterm Exam", 65)
-gradebook.record_grade("S002", "PY101", "Final Project", 80)
-
-# ***************************
-# Add Teacher comments
-# ***************************
-gradebook.teacher_comments(
-    "S001",
-    "Good job! Keep improving your programming skills."
-)
-gradebook.teacher_comments(
-    "S002",
-    "Good effort. Focus on improving your exam performance."
-)
-
-# ***********************
-# Dashboard
-# ***********************
-gradebook.dashboard()
-
-# **************************
-# Calculate Average
-# **************************
-average = gradebook.calculate_average("S001", "PY101")
-print(f"Average: {average:.2f}")
-
-# *************************
-# Show Reports
-# *************************
-gradebook.show_report("S001")
-gradebook.show_report("S002")
+# gradebook = Gradebook()
+#
+# # ****************************
+# # Create Student Objects
+# # ****************************
+# student1 = Student("S001", "Ahmad Rahmi", "ahmad@gmail.com")
+# student2 = Student("S002", "Sara Noori", "sara@gmail.com")
+#
+# # **************************
+# # Create Course Objects
+# # **************************
+# course1 = Course("PY101", "Python Programming")
+# course2 = Course("DB101", "Database Systems")
+#
+# # *******************************
+# # Create Assessment Objects
+# # *******************************
+# quiz1 = Quiz("Quiz 1", 10)
+# quiz2 = Quiz("Quiz 2", 10)
+#
+# exam1 = Exam("Midterm Exam", 100)
+# exam2 = Exam("Final Exam", 100)
+#
+# project1 = Project("Final Project", 100)
+#
+# # *******************************
+# # Add students to Gradebook
+# # *******************************
+# gradebook.add_student(student1)
+# gradebook.add_student(student2)
+#
+# # *******************************
+# # Add courses to Gradebook
+# # *******************************
+# gradebook.add_course(course1)
+# gradebook.add_course(course2)
+#
+# # *******************************
+# # Add assessments to courses
+# # *******************************
+# gradebook.add_assessment("PY101", quiz1)
+# gradebook.add_assessment("PY101", exam1)
+# gradebook.add_assessment("PY101", project1)
+#
+# gradebook.add_assessment("DB101", quiz2)
+# gradebook.add_assessment("DB101", exam2)
+#
+# # ****************************
+# # Enroll Students
+# # ****************************
+# gradebook.enroll_student("S001", "PY101")
+# gradebook.enroll_student("S001", "DB101")
+# gradebook.enroll_student("S002", "PY101")
+#
+# # **************************
+# # Record Grades
+# # **************************
+# gradebook.record_grade("S001", "PY101", "Quiz 1", 8)
+# gradebook.record_grade("S001", "PY101", "Midterm Exam", 75)
+# gradebook.record_grade("S001", "PY101", "Final Project", 90)
+#
+# gradebook.record_grade("S001", "DB101", "Quiz 2", 9)
+# gradebook.record_grade("S001", "DB101", "Final Exam", 88)
+#
+# gradebook.record_grade("S002", "PY101", "Quiz 1", 7)
+# gradebook.record_grade("S002", "PY101", "Midterm Exam", 65)
+# gradebook.record_grade("S002", "PY101", "Final Project", 80)
+#
+# # ***************************
+# # Add Teacher comments
+# # ***************************
+# gradebook.teacher_comments(
+#     "S001",
+#     "Good job! Keep improving your programming skills."
+# )
+# gradebook.teacher_comments(
+#     "S002",
+#     "Good effort. Focus on improving your exam performance."
+# )
+#
+# # ***********************
+# # Dashboard
+# # ***********************
+# gradebook.dashboard()
+#
+# # **************************
+# # Calculate Average
+# # **************************
+# average = gradebook.calculate_average("S001", "PY101")
+# print(f"Average: {average:.2f}")
+#
+# # *************************
+# # Show Reports
+# # *************************
+# gradebook.show_report("S001")
+# gradebook.show_report("S002")
 
 
